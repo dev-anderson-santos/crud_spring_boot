@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: head">
+<meta charset="utf-8">
+<title>Bazar</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+</head>
+<body>
+<header th:insert="fragments/header :: header"> </header>
+<div class="container">
+		
+	<form method="POST" action="/editar">
+	  <div class="form-group">
+	    <label for="nome">Nome</label>
+	    <input type="text" class="form-control" id="nome" name="nome" th:value="${produto.nome}">	    
+	  </div>
+	  <div class="form-group">
+	    <label for="preco">Preço</label>
+	    <input type="text" class="form-control" id="preco" name="preco" th:value="${produto.preco}">
+	  </div>
+	  <input type="hidden" id="codigo" name="codigo" th:value="${produto.codigo}">
+	  <button type="submit" class="btn btn-primary">Atualizar produto</button>
+	</form>
+</div>
+
+</body>
+</html>
